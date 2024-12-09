@@ -1,12 +1,122 @@
-/* Feel free to remove these styles or customise in your own stylesheet 👍 */
-.attribution {
-    font-size: 11px;
+body {
+    background-color: hsl(202, 86%, 94%);
+    color: hsl(200, 24%, 40%);
+    font-size: 17px;
+}
+.input-group-lg{
+    height: 50px;
+}
+
+h1, .m-type, .btn {
+    color: hsl(202, 55%, 18%);
+    font-weight:700;
+}
+
+#inputGroupPrepend,
+#validationTerm,
+#validationRate {
+    background-color: hsl(202, 86%, 94%);
+    color: hsl(200, 24%, 40%);
+}
+
+.container {
+    background-color: hsl(0, 0%, 100%);
+}
+
+a {
+    color: hsl(200, 24%, 40%);
+}
+.m-type{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 0.5rem;
+    border: 1px solid hsl(203, 41%, 72%);
+    
+}
+.m-type > * {
+    cursor: pointer;
+}
+.m-type:hover{
+    border: 1px solid hsl(61, 70%, 52%);
+}
+.m-type.selected{
+
+    border: 1px solid hsl(61, 70%, 52%);
+}
+
+
+input[type='radio']{
+    appearance: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: .5rem;
+    outline: 2px solid hsl(202, 55%, 16%);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+input[type='radio']:checked{
+    background-color: hsl(61, 70%, 52%);
+}
+.btn {
+    background-color: hsl(61, 70%, 52%);
+    width: 320px;
+    border-radius: 1.5rem;
+    height: 50px;
+}
+
+.results-container {
+    background-color: hsl(202, 55%, 18%);
+    color: hsl(202, 86%, 94%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+#results {
+    background-color: hsl(202, 55%, 16%);
+    border-top: 5px solid hsl(61, 70%, 52%);
+    border-radius: .5rem;
 }
-.results-container{
-    background-color: blue;
+#rs-monthly{
+    color: hsl(61, 70%, 52%);
+    font-size: 3rem;
+}
+.rs-total{
+    color: white;
+    font-size: 2rem;
+}
+.line{
+    background-color: hsl(200, 26%, 54%);
+    width: 100%;
+    height: 0.5px;
+    margin: 1rem 0;
+    display: block;
+}
+
+.completed-results {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+
+
+@media (min-width: 768px) {
+    
+    .container{
+        border-radius: 1rem;
+        margin-top: 200px;
+        
+    }
+    .results-container{
+        border-radius: 1rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 3rem;
+        width: 1500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

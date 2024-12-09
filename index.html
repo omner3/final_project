@@ -11,22 +11,24 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/main.css">
 
+  <script src="./scripts/main.js" defer></script>
+
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
+<body class="d-flex flex-column">
+  <div class="container d-md-flex">
+    <div class="row px-2">
+      <div class="col-12 mt-4">
         <h1>Mortgage Calculator</h1>
       </div>
       <div class="col-12">
         <a href="">Clear All</a>
       </div>
-      <form class="row needs-validation" novalidate>
-        <div class="col-12">
+      <form class="row mt-4 needs-validation" novalidate>
+        <div class="col-12 mb-3">
           <label for="mortgageAmount" class="form-label">Mortgage Amount</label>
-          <div class="input-group has-validation">
+          <div class="input-group input-group-lg has-validation">
             <span class="input-group-text" id="inputGroupPrepend">£</span>
             <input type="text" class="form-control" id="mortgageAmount" aria-describedby="inputGroupPrepend" required>
             <div class="invalid-feedback">
@@ -34,9 +36,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mb-3">
           <label for="mortgageTerm" class="form-label">Mortgage Term</label>
-          <div class="input-group has-validation">
+          <div class="input-group input-group-lg has-validation">
             <input type="text" class="form-control" id="mortgageTerm" aria-describedby="validationTerm" required>
             <span class="input-group-text" id="validationTerm">years</span>
             <div class="invalid-feedback">
@@ -44,9 +46,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mb-3">
           <label for="interesRate" class="form-label">Interest Rate</label>
-          <div class="input-group has-validation">
+          <div class="input-group input-group-lg has-validation">
             <input type="text" class="form-control" id="interesRate" aria-describedby="validationRate" required>
             <span class="input-group-text" id="validationRate">%</span>
             <div class="invalid-feedback">
@@ -54,54 +56,61 @@
             </div>
           </div>
         </div>
-        <div class="form-check col-12">
-          <label for="form-check-input">Mortgage Type</label>
-          <div class="mortgage-type">
-            <input type="radio" class="form-check-input" id="repaymentRadio" name="radio-stacked" required>
-            <label class="form-check-label" for="repaymentRadio">Repayment</label>
+        <!--Mortgage type starts-->
+        <div class="col-12">
+          <label for="">Mortgage Type</label>
+          <div class="m-type mt-2 mb-2">
+              <input type="radio" class="" id="repaymentRadio" required>
+              <label class="" for="repaymentRadio">Repayment</label>
           </div>
         </div>
-        <div class="form-check col-12">
-          <div class="mortgage-type">
-            <input type="radio" class="form-check-input" id="interestRadio" name="radio-stacked" required>
-            <label class="form-check-label" for="interestRadio">Interest Only</label>
+        <div class="col-12">
+          <div class="m-type">      
+              <input type="radio" class="" id="interestRadio" required>
+              <label class="" for="interestRadio">Interest Only</label>
           </div>
           <div class="invalid-feedback">This field is required</div>
         </div>
+        <!--Mortgage type ends-->
         <div class="col-12">
-          <button class="btn" type="submit">
+          <button class="btn mt-3 mb-4" type="submit" id="caculate-repayments">
             <img src="./assets/images/icon-calculator.svg" alt="icon calculator">
             Calculate Repayments</button>
         </div>
       </form>
     </div>
-    <div class="row results-container text-white">
+    <div class="row results-container pt-4 pb-4 ">
       <!-- Empty results start -->
-      <div class="col-12">
-        <img src="./assets/images/illustration-empty.svg" alt="illustration empty">
-      </div>
-      <div class="col-12">
-        <h2>Results shown here</h2>
-      </div>
-      <div class="col-12">
-        <p>Complete the form and click “calculate repayments” to see what
-          your monthly repayments would be.</p>
+      <div class="empty-results d-none">
+        <div class="col-12">
+          <img src="./assets/images/illustration-empty.svg" alt="illustration empty">
+        </div>
+        <div class="col-12">
+          <h2 class="text-white">Results shown here</h2>
+        </div>
+        <div class="col-12">
+          <p>Complete the form and click “calculate repayments” to see what
+            your monthly repayments would be.</p>
+        </div>
       </div>
       <!-- Empty results end -->
       <!-- Completed results start -->
-      <div class="completed-results d-none">
+      <div class="completed-results px-4 ">
         <div class="col-12">
-          <h2>Your results</h2>
+          <h2 class="text-white">Your results</h2>
         </div>
         <div class="col-12">
-          <p>Your results are shown below based on the information you provided.
+          <p class="pb-2">Your results are shown below based on the information you provided.
             To adjust the results, edit the form and click “calculate repayments” again.</p>
         </div>
-        <div class="col results">
-          <label for="monthly">Your monthly repayments</label>
-          <textarea type="text" id="monthly" disabled></textarea>
-          <label for="total">Total you'll repay over the term</label>
-          <textarea type="text" id="total" disabled></textarea>
+        <div class="col-12">
+          <div class="p-3" id="results">
+            <p class="mb-0">Your monthly repayments</p>
+            <span id="rs-monthly">£12,347.99</span>
+            <div class="line"></div>
+            <p class="mb-0">Total you'll repay over the term</p>
+            <span class="rs-total">£1,347,891.32</span>
+          </div>
         </div>
       </div>
       <!-- Completed results end -->
@@ -111,10 +120,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
 </body>
 
 </html>
