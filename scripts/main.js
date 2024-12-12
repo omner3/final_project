@@ -1,10 +1,10 @@
-const form = document.querySelector('#form');
-const mortgageAmount = document.querySelector('#mortgageAmount');
-const mortgageTerm = document.querySelector('#mortgageTerm');
-const interestRate = document.querySelector('#interestRate');
-const calculateRepayments = document.querySelector('#caculate-repayments');
-const monthlyRs = document.querySelector('#rs-monthly');
-const totalRs = document.querySelector('#rs-total');
+const form = document.querySelector('#form')
+const mortgageAmount = document.querySelector('#mortgageAmount')
+const mortgageTerm = document.querySelector('#mortgageTerm')
+const interestRate = document.querySelector('#interestRate')
+const calculateRepayments = document.querySelector('#caculate-repayments')
+const monthlyRs = document.querySelector('#rs-monthly')
+const totalRs = document.querySelector('#rs-total')
 
 form.addEventListener('submit', function(event) {
   event.preventDefault()
