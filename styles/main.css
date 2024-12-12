@@ -60,7 +60,7 @@ input[type='radio']:checked{
 }
 .btn {
     background-color: hsl(61, 70%, 52%);
-    width: 320px;
+    width: 360px;
     border-radius: 1.5rem;
     height: 50px;
 }

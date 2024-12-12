@@ -25,7 +25,7 @@
       <div class="col-12">
         <a href="">Clear All</a>
       </div>
-      <form class="row mt-4 needs-validation" novalidate>
+      <form class="row mt-4 needs-validation" id="form" novalidate>
         <div class="col-12 mb-3">
           <label for="mortgageAmount" class="form-label">Mortgage Amount</label>
           <div class="input-group input-group-lg has-validation">
@@ -49,7 +49,7 @@
         <div class="col-12 mb-3">
           <label for="interesRate" class="form-label">Interest Rate</label>
           <div class="input-group input-group-lg has-validation">
-            <input type="number" class="form-control" id="interesRate" aria-describedby="validationRate" required>
+            <input type="number" class="form-control" id="interestRate" aria-describedby="validationRate" required>
             <span class="input-group-text" id="validationRate">%</span>
             <div class="invalid-feedback">
               This field is required
@@ -58,16 +58,16 @@
         </div>
         <!--Mortgage type starts-->
         <div class="col-12">
-          <label for="">Mortgage Type</label>
+          <label>Mortgage Type</label>
           <div class="m-type mt-2 mb-2">
-              <input type="radio" class="" id="repaymentRadio" name="radio-stacked" required>
-              <label class="" for="repaymentRadio">Repayment</label>
+              <input type="radio" class="form-check-input" id="repaymentRadio" name="radio-stacked" required>
+              <label class="form-check-label" for="repaymentRadio">Repayment</label>
           </div>
         </div>
         <div class="col-12">
           <div class="m-type">      
-              <input type="radio" class="" id="interestRadio" name="radio-stacked" required>
-              <label class="" for="interestRadio">Interest Only</label>
+              <input type="radio" class="form-check-input" id="interestRadio" name="radio-stacked" required>
+              <label class="form-check-label" for="interestRadio">Interest Only</label>
           </div>
           <div class="invalid-feedback">This field is required</div>
         </div>
@@ -81,7 +81,7 @@
     </div>
     <div class="row results-container pt-4 pb-4 ">
       <!-- Empty results start -->
-      <div class="empty-results d-none">
+      <div class="empty-results " id="empty-results">
         <div class="col-12">
           <img src="./assets/images/illustration-empty.svg" alt="illustration empty">
         </div>
@@ -95,7 +95,7 @@
       </div>
       <!-- Empty results end -->
       <!-- Completed results start -->
-      <div class="completed-results px-4 ">
+      <div class="completed-results px-4 d-none" id="completedResults">
         <div class="col-12">
           <h2 class="text-white">Your results</h2>
         </div>
