@@ -5,18 +5,33 @@ const interestRate = document.querySelector('#interestRate')
 const calculateRepayments = document.querySelector('#caculate-repayments')
 const monthlyRs = document.querySelector('#rs-monthly')
 const totalRs = document.querySelector('#rs-total')
+const repaymentRadio = document.querySelector('#repaymentRadio')
+const interestRadio = document.querySelector('#interestRadio')
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
   event.preventDefault()
 
   let p = parseFloat(mortgageAmount.value)
-  let r = parseFloat(interestRate.value) / 12 
+  let r = parseFloat(interestRate.value) / 12
   let years = parseInt(mortgageTerm.value)
   let n = years * 12
-  let monthlyPayment = calculate(p, r, n)
-  let totalRepayment = monthlyPayment * n
-  monthlyRs.textContent = `£${monthlyPayment.toFixed(2)}`
-  totalRs.textContent = `£${totalRepayment.toFixed(2)}`
+
+
+
+  if (interestRadio.checked) {
+    let interestMonthly = p * r
+    let interestTotal = interestMonthly * n
+
+    monthlyRs.textContent = `£${interestMonthly.toFixed(2)}`
+    totalRs.textContent = `£${interestTotal.toFixed(2)}`
+
+  } else if (repaymentRadio.checked){
+    let monthlyPayment = calculate(p, r, n)
+    let totalRepayment = monthlyPayment * n
+
+    monthlyRs.textContent = `£${monthlyPayment.toFixed(2)}`
+    totalRs.textContent = `£${totalRepayment.toFixed(2)}`
+  }
 
   document.getElementById('empty-results').classList.add('d-none')
   document.getElementById('completedResults').classList.remove('d-none')
